@@ -116,7 +116,11 @@ include $(THEOS_MAKE_PATH)/legacy.mk
 ifneq ($(_THEOS_PLATFORM_CALCULATED),1)
 uname_s := $(shell uname -s)
 uname_p := $(shell uname -p)
+ifneq ($(uname_s),Darwin)
 uname_o := $(shell uname 2>/dev/null)
+else
+uname_o := Darwin
+endif
 
 ifeq ($(uname_s)-$(uname_p),Darwin-arm64)
 uname_p = arm
