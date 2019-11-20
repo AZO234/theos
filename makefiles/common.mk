@@ -117,7 +117,7 @@ ifneq ($(_THEOS_PLATFORM_CALCULATED),1)
 uname_s := $(shell uname -s)
 uname_p := $(shell uname -p)
 ifneq ($(uname_s),Darwin)
-uname_o := $(shell uname 2>/dev/null)
+uname_o := $(shell uname -o 2>/dev/null)
 else
 uname_o := Darwin
 endif
